@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Record from './record';
-import Audio from 'translation-audio-player';
-import LoginControl from './example';
+import Record from './recordComment';
+import ModalExample from './CommentContainer';
+import RecordComment from './recordComment';
+
 
 
 
@@ -35,8 +36,10 @@ class App extends Component {
                 </p>
 
 
-                <div><Record/></div>
 
+
+                <div><ModalExample/></div>
+               {/*<div><RecordComment/></div>*/}
 
 
 

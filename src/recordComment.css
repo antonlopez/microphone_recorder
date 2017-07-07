@@ -1,0 +1,114 @@
+
+
+
+.sound-wave{
+
+    height: 100px;
+    width: 490px;
+    margin-left: -10px;
+    border-radius: 5px;
+
+
+
+
+}
+
+
+.start{
+
+    height: 110px;
+    width: 110px;
+    border-radius: 60px;
+    align-content: center;
+    background-color: #00FF17;
+    border: none;
+
+
+
+}
+
+
+
+.start:hover {
+    cursor: pointer;
+    background-color: #3ADF51;
+}
+
+.start:focus{
+    outline: none;
+
+}
+
+
+
+.stop{
+
+    height: 110px;
+    width: 110px;
+    border-radius: 60px;
+    background-color: #FF4B00;
+    border: none;
+
+
+
+
+}
+
+
+
+.stop:hover {
+    cursor: pointer;
+    /*background-color: #F69C76;*/
+
+}
+
+.stop:focus{
+    outline: none;
+
+}
+
+.mic{
+    margin-left: 10px;
+
+
+
+}
+
+
+
+.modal-style
+{
+    color: #0480be;
+
+
+
+}
+
+
+
+.buttons-container{
+    margin-left: 190px;
+    margin-top: 50px;
+
+}
+
+
+.audioPlayer{
+    margin-bottom: 60px;
+    margin-left: 100px;
+
+
+
+
+
+}
+
+.test{
+
+    color: #0480be;
+}
+
+
+
+
+

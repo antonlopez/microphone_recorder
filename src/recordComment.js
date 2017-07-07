@@ -1,10 +1,14 @@
 import React, {Component} from 'react';
 import { ReactMic } from 'react-mic';
+import './recordComment.css';
+import mic from './Group.png';
+import stop from './stopButton.png';
 
 
 
 
-export class Record extends Component {
+
+export class RecordComment extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -58,19 +62,32 @@ export class Record extends Component {
 
 
         const displayPlayer = this.state.displayPlayer;
+        const displayButton = this.state.record;
 
         const AudioURL = this.state.AudioURL;
 
         console.log('AudioURL from render', AudioURL);
 
-        let button = <StopButton onClick={this.stopRecording} />;
+        let button = <StopButton  onClick={this.stopRecording} />;
+
+        let startButton=  <button className="start" onClick={this.startRecording} type="button"> <img className="mic" src={mic}/> </button>;
 
         let AudioPlayer = null;
+
+        let testButton = null;
+
+
 
         if (displayPlayer) {
             AudioPlayer =  <DisplayAudioPlayer displayPlayer={displayPlayer} AudioURL = {AudioURL} />;
         }
 
+        if(displayButton){
+            testButton = <StopButton  onClick={this.stopRecording} />;
+        }else{
+
+            testButton= <button className="start" onClick={this.startRecording} type="button"> <img className="mic" src={mic}/> </button>;
+        }
 
 
 
@@ -79,22 +96,26 @@ export class Record extends Component {
 
 
 
-            <div>
+            <div className="audio">
                 <ReactMic
                     record={this.state.record}
                     className="sound-wave"
                     onStop={this.onStop}
                     strokeColor="#42adf4"
-                    backgroundColor="#000000" />
-                <div>
-                    <button onClick={this.startRecording} type="button">Start</button>
+                    backgroundColor="#000000"
 
-                    {button}
 
-                 <div>
-                     {AudioPlayer}
-                 </div>
+                />
+                <div className="buttons-container">
+                    {testButton}
+
+
                 </div>
+
+                <div>
+                    {AudioPlayer}
+                </div>
+
 
 
 
@@ -107,8 +128,8 @@ export class Record extends Component {
 
 function StopButton(props) {
     return (
-        <button onClick={props.onClick}>
-            Stop
+        <button className="stop" onClick={props.onClick}>
+            <img className="mic" src={stop}/>
         </button>
     );
 }
@@ -145,7 +166,7 @@ function DisplayAudioPlayer(props) {
 
         return (
 
-               <video controls name="media">
+               <video className="audioPlayer" controls name="media">
                   <source src= {AudioURL} type = "audio/webm" />
                </video>
         );
@@ -154,4 +175,4 @@ function DisplayAudioPlayer(props) {
 }
 
 
-export default Record;
+export default RecordComment;
